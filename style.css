@@ -1,0 +1,118 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                url("/static/images/bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Navbar */
+nav {
+    background: rgba(0,0,0,0.8);
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 15px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #2ecc71;
+}
+
+/* Card */
+.container {
+    width: 400px;
+    margin: 100px auto;
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+
+    text-align: center;
+    color: white;
+}
+/* Inputs */
+input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px;
+    border-radius: 8px;
+    border: none;
+
+    outline: none;
+}
+/* Buttons */
+button {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #5a67d8, #6b46c1);
+}
+
+/* Result */
+.result-box {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    color: white; /* IMPORTANT */
+}
+
+/* Safe */
+.safe {
+    background: linear-gradient(135deg, #00b09b, #96c93d);
+}
+
+/* Risk */
+.risk {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+.result-box h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.result-box p {
+    font-size: 18px;
+    opacity: 0.95;
+}
+
+/* Table */
+table {
+    width: 100%;
+    color: white;
+    margin-top: 20px;
+}
+
+td, th {
+    padding: 8px;
+}
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Predict</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav>
+<a href="/">Home</a>
+<a href="/predict">Predict</a>
+<a href="/history">History</a>
+<a href="/about">About</a>
+</nav>
+
+<div class="container">
+
+<img src="{{ url_for('static', filename='images/ai.png') }}" width="80">
+
+<h1>Enter Details</h1>
+
+<form action="/result" method="post">
+<input name="p1" type="number" required placeholder="Pregnancies">
+<input name="p2" type="number" required placeholder="Glucose">
+<input name="p3" type="number" required placeholder="Blood Pressure">
+<input name="p4" type="number" required placeholder="Skin Thickness">
+<input name="p5" type="number" required placeholder="Insulin">
+<input name="p6" type="number" required placeholder="BMI">
+<input name="p7" type="number" step="any" required placeholder="DPF">
+<input name="p8" type="number" required placeholder="Age">
+
+<button type="submit">Predict</button>
+</form>
+
+<div class="result-box {{ 'safe' if result=='Not Diabetic' else 'risk' }}">
+    
+    <h2>
+        {% if result == 'Not Diabetic' %}
+            ✅ Not Diabetic
+        {% else %}
+            ❌ Diabetic
+        {% endif %}
+    </h2>
+
+    <p>Confidence: {{ prob }}%</p>
+
+</div>
+
+<canvas id="chart"></canvas>
+
+</div>
+
+<scrip src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+var prob = {{ prob|default(0) }};
+var safe = 100 - prob;
+
+new Chart(document.getElementById("chart"), {
+    type: "doughnut",
+    data: {
+        labels: ["Risk", "Safe"],
+        datasets: [{
+            data: [prob, safe],
+            backgroundColor: ["#e74c3c", "#3498db"],  // red + blue
+            borderWidth: 2
+        }]
+    },
+    options: {
+        cutout: "70%",   // donut size
+        plugins: {
+            legend: {
+                position: "top",
+                labels: {
+                    color: "white"
+                }
+            }
+        }
+    }
+});
+</script>
+
+</body>
+</html>

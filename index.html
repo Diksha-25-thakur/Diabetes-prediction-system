@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav>
+<a href="/">Home</a>
+<a href="/predict">Predict</a>
+<a href="/history">History</a>
+<a href="/about">About</a>
+</nav>
+
+<div class="container">
+<img src="{{ url_for('static', filename='images/doctor.png') }}" width="100">
+<h1>Diabetes Prediction</h1>
+<p>AI-powered health prediction system</p>
+<a href="/predict" class="btn">Start Prediction</a>
+</div>
+
+</body>
+</html>

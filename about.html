@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>About</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav>
+<a href="/">Home</a>
+<a href="/predict">Predict</a>
+<a href="/history">History</a>
+<a href="/about">About</a>
+</nav>
+
+<div class="container">
+
+<img src="{{ url_for('static', filename='images/ai.png') }}" width="80">
+
+<h1>About Project</h1>
+
+<p>Machine Learning based Diabetes Prediction System</p>
+<p>Algorithm: Logistic Regression</p>
+<p>Dataset: Pima Indians Diabetes Dataset</p>
+<p>Accuracy: ~78%</p>
+
+</div>
+
+</body>
+</html>

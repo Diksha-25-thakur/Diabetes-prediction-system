@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>History</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav>
+<a href="/">Home</a>
+<a href="/predict">Predict</a>
+<a href="/history">History</a>
+<a href="/about">About</a>
+</nav>
+
+<div class="container">
+<h1>Prediction History</h1>
+
+<table border="1">
+<tr>
+<th>Glucose</th>
+<th>BMI</th>
+<th>Age</th>
+<th>Result</th>
+<th>Risk %</th>
+</tr>
+
+{% for row in data %}
+<tr>
+<td>{{ row[1] }}</td>
+<td>{{ row[5] }}</td>
+<td>{{ row[7] }}</td>
+<td>{{ row[8] }}</td>
+<td>{{ row[9] }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>
